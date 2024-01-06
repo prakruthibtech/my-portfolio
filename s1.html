@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            background-color: black;
+        }
+
+        header {
+            background:#3498db;
+            padding: 10px;
+            text-align: center;
+            color: #fff;
+        }
+
+        #about-container {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            padding: 40px;
+            text-align: center;
+        }
+
+        #profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            transition: transform 0.5s ease-in-out;
+        }
+        img#dancing-image {
+            display: none;
+            width: 100%;
+            max-width: 400px;
+            border-radius: 5px;
+            margin: 0 auto; /* Center the image horizontally */
+            display: block;
+        }
+
+        h1 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        p {
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        #study-info, #work-experience {
+            text-align: left;
+            margin-top: 30px;
+        }
+
+        
+        a {
+      display: inline-block;
+      padding: 10px 20px; /* Adjust padding as needed */
+      text-decoration: none;
+      background-color: #3498db; /* Green color, you can change this */
+      color: #f0f8f1; /* White text */
+      border: 1px solid #ffffff; /* Border color matches background color */
+      border-radius: 5px; /* Rounded corners */
+      transition: background-color 0.3s ease; /* Smooth transition on hover */
+    }
+
+    /* Hover effect */
+    a:hover {
+      background-color: black; /* Darker green on hover, adjust as needed */
+      color: #ffffff;
+    }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>About Me</h1>
+    </header>
+
+    <div id="about-container">
+        <img id="profile-image" src="prakruthi.PNG" alt="Profile Image" onclick="animateProfileImage()">
+        <h1>PRAKRUTHI S</h1>
+        <p>Welcome to my professional portfolio!<br> Hi there! I'm PRAKRUTHI S, a  passionate Web developer. <br>I'm good at Front End Development, Data Science, and AI. I love turning cool ideas into real things.My skills include HTML, CSS, JavaScript, and various web development frameworks. I am always eager to learn and adapt to new technologies to stay at the forefront of the ever-evolving web landscape.
+            Let's team up and create awesome stuff!</p>
+        
+        
+        
+
+    <script>
+        function animateProfileImage() {
+            const profileImage = document.getElementById('profile-image');
+            profileImage.style.transform = 'rotate(360deg)';
+            setTimeout(() => {
+                profileImage.style.transform = 'rotate(0deg)';
+            }, 500);
+        }
+        // Show dancing image for a few seconds when the page loads
+        window.onload = function () {
+            const dancingImage = document.getElementById('dancing-image');
+            dancingImage.style.display = 'block';
+            setTimeout(() => {
+                dancingImage.style.display = 'none';
+            }, 6000); // Adjust the time in milliseconds (e.g., 3000 for 3 seconds)
+        };
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio - Projects</title>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh;
+            background-color: #060505;
+        }
+
+        #container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        #sidebar {
+            flex: 0 0 25%;
+            background-color: white;
+            color: #2ecc71;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav li {
+            margin-bottom: 10px;
+        }
+
+        a {
+            color: #2ecc71;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        #projects-container {
+            flex: 1;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .project-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px;
+            width: 300px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .project-image {
+            width: 100%;
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #2ecc71;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #555;
+            flex-grow: 1;
+        }
+        @keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    }
+    /* Additional animation for rotation */
+    @keyframes rotateIn {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(5deg);
+    }
+    }
+
+
+
+.project-card {
+    /* ... (existing styles) */
+    animation: fadeIn 0.5s ease-out, rotateIn 0.5s ease-out; /* Add the new rotation animation */
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s; /* Include background-color in the transition */
+}
+
+.project-card:hover {
+    transform: scale(1.05) rotate(5deg); /* Apply rotation on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    background-color: #ecf0f1; /* Change background color on hover */
+}
+
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="sidebar">
+            <header>
+                <h1>PROJECTS</h1>
+            </header>
+            <nav>
+                <ul>
+                    <li><a href="h.html">Home</a></li>
+                    <li><a href="s1.html">About Me</a></li>
+                    <li><a href="r.html">Projects</a></li>
+                    <li><a href="s3.html">Contact </a></li>
+
+                    <!-- Add more navigation links as needed -->
+                </ul>
+            </nav>
+        </div>
+        <div id="projects-container">
+            <!-- Project cards will be dynamically added here using JavaScript -->
+            
+        </div>
+    </div>
+    
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Sample project data with images
+            const projects = [
+                {
+                    title: "French Beanery",
+                    description: "This websites focuses on the vegetarians who face difficultiesn in finding veg hotels. So this websites helps them to find good veg hotels near them.",
+                    image: "Capture1.PNG",
+                },
+                {
+                    title: "Digital Locks",
+                    description: "This is digilock which lights up when only correct password is simultaneously pressed",
+                    image: "C.PNG",
+                },
+                // Add more projects as needed
+            ];
+
+            const projectsContainer = document.getElementById("projects-container");
+
+            // Create project cards dynamically
+            projects.forEach(project => {
+                const projectCard = document.createElement("div");
+                projectCard.classList.add("project-card");
+
+                const image = document.createElement("img");
+                image.src = project.image;
+                image.alt = project.title;
+                image.classList.add("project-image");
+
+                const title = document.createElement("h2");
+                title.textContent = project.title;
+
+                const description = document.createElement("p");
+                description.textContent = project.description;
+
+                projectCard.appendChild(image);
+                projectCard.appendChild(title);
+                projectCard.appendChild(description);
+
+                projectsContainer.appendChild(projectCard);
+            });
+        });
+    </script>
+</body>
+</html>
